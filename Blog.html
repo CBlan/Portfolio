@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Blog</title>
+	<link rel="stylesheet" type="text/css" href="GalleryStyle.css">
+</head>
+<header>
+<img src="Images/Icon.png" alt="Back to index" style="width:150px;height:150px;">
+<p>
+<h1>BLOG</h1>
+<a href="index.html" class = "button">BACK TO INDEX</a><br>
+</p>
+<hr>
+</header>
+<body>
+
+<div>
+<p>
+<h2>Jun 11 - 17</h2>
+<p>
+Project fog started.
+<p>
+It was decided the game would be an arena style shooter in a 3D futuristic "neon" style.
+<p>
+Once the style and plan of what were doing was sorted we started working.
+<p>
+We decided to make the environment with multiple height levels so the player would need a way of traversing between them as well as the enemies. We decided on a parkour style of traversing levels with the player being able to jump off walls, programming this is my first job.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jun 18 - 25</h2>
+<p>
+The player controller is done (although we aren't entirely set on the implementation even after a couple of iterations). We now need a weapon for the player to use.
+<p>
+We decided the players weapon would be grenades rather than a gun to add something a little different to the game, we also decided the player would have other abilities such as being able to dash forwards. These are my next programming tasks.
+<p>
+These abilities were relatively easy to program so I started on the next thing we would need, enemies.
+<p>
+We did not want to add another layer of complexity to the project by adding animations for everything, so it was decided that our enemies would be flying/floating enemies. This way we cut down on any animations needed.
+<p>
+To make our enemies we would need them to be able to move in 3D space rather than on 2D planes. To accomplish this I tried to find a pre-built pathfinding system that we could use. Unfortunately I couldn't find anything that was satisfactory (they were either too expensive or used their base algorithms incorrectly). So I decided to make my own based on the A* algorithm.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jun 26 - Jul 1</h2>
+<p>
+Once the basic A* implementation was complete I added support for weighted nodes so enemies have prefered pathing areas (such as not pathing too close to walls). I also added performance optimizations such as threading and the use of a heap for node sorting as the pathfinding is going to see use by many enemies it needs to be as efficient as possible.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jun 26 - Jul 1</h2>
+<p>
+Once the basic A* implementation was complete I added support for weighted nodes so enemies have prefered pathing areas (such as not pathing too close to walls). I also added performance optimizations such as threading and the use of a heap for node sorting as the pathfinding is going to see use by many enemies it needs to be as efficient as possible.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jul 2 - 8</h2>
+<p>
+After the pathfinding algorithm we need behaviors for the enemies, we decided on 3 types, a melee enemy that will charge at you, a ranged enemy that shoots from a distance and a scout enemy that broadcasts the players position to the other enemies.
+<p>
+I started with the melee enemy as it seems the most basic, it patrols untill the player gets in its line of sight or gets too close to it then once alerted it chases the player chases the player. The patrol points would be random points of its chosing within the arena.
+<p>
+The next enemy behaviour is the scout. It would path to the player, then hover erratically around the player while looking at them. It will also alert other enemies starting with the closest enemies to the players position.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jul 9 - 15</h2>
+<p>
+The enemy behaviours are causing some lag issues where the game would freeze up. It is most likely caused by too many path requests by the enemies and calculating extremely long paths. Changes were made to their behaviours to try to combat this. Although the changes did not entirely fix the issue, they did improve it considerably. This is good enough for the moment as there is more work to be done and this issue could be addressed later after more time to think about solutions.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jul 16 - 22</h2>
+<p>
+The next job is building the environment. I am responsible for texturing the buildings and getting them prefabricated in engine so they are ready to be placed. First a basic template for the building style is settled on. This job is then an ongoing one that will continue in the background as there are a multitude of assets to texture along with the other programming that needs done.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jul 23 - 29</h2>
+<p>
+This week sees the behaviour for the ranged unit. It will patrol around the map looking downwards and shoot at the player when underneath it as well as shooting at the player when alerted by the scout unit and in range of the player. This also requires some adjustments to the scouts behaviour.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Jul 30 - Aug 5</h2>
+<p>
+Damage and health systems for the player and enemies must now be added. This includes a game manager that will track vital data such as the player status and references to enemies in the scene. A spawn manager was also added to control how often, where and what type of enemies spawn.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Aug 6 - 12</h2>
+<p>
+After some play testing it has become clear that the parkour style of the player controller is somewhat unwieldy with the player not being able to more as easily or smoothly as we would like. It's decided that instead giving the player a limited use jetpack with fuel that regenerates over time allows for smoother more purposeful movement so this feature is added to a new player controller.
+<p>
+The start of a HUD for the player is also added to visualise the systems that we have put in, such as the dash cooldown, health and jetpack fuel.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Aug 13 - 19</h2>
+<p>
+The player needs some way to regain his health so we added regeneration of health over time after the player hasn't been hit for a while.
+<p>
+A start is made on the menus screen. We decided we wanted the menus to be set on signs in the world and have the camera move between signs for different menus, so this feature was added.
+<p>
+Small optimizations to pathing, spawning and the alert system are also added.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Aug 20 - 26</h2>
+<p>
+More of the texturing for the buildings is done this week as it has been somewhat neglected due to other concerns.
+<p>
+Improvements to the main menus are also added such as mouse over effects for non-UI elements.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Aug 27 - Sep 2</h2>
+<p>
+More building textures and prefabs are done, ready to be put in the scene.
+<p>
+Movement in the HUD is also implemented so that when the player moves or looks around the HUD moves slightly to simulate helmet movement.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Sep 3 - 9</h2>
+<p>
+Prefabs for miscellaneous objects such as walkways and air vents are added.
+<p>
+A shader is added to the HUD to produce a scanning effect across the linework.
+<p>
+Enemy textures and their prefabs are added to the main scene.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Sep 10 - 16</h2>
+<p>
+After some playtesting it's noticed that the buildings are slighty out of scale with the rest of the world, to fix this the buildings are scaled down and more buildings are added and composited together to fill the gaps.
+<p>
+More miscellaneous object prefabs are made such as lights and pipes.
+<p>
+Symbols for the various neon signs we want in the scene are added, along with a flickering neon effect to produce the look we wanted for the scene.
+<p>
+We decided we wanted to add upgrades for the player to buy, so a vending machine is added where the player can go to buy upgrades for their jetpack, dash ability, grenades and shields.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Sep 17 - 23</h2>
+<p>
+We decided the player needs more incentive to kill the enemies and not just avoid them. We added constantly depleting oxygen to the game so the player would have to spend credits acquired from killing enemies on oxygen to stay alive.
+<p>
+A "shield" was also added around the environment that kills the player on touch to stop the player falling forever or getting too high.
+<p>
+Animations were added to the melee enemies to make them open and close their "mouths" when about to attack the player.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Sep 24 - 30</h2>
+<p>
+To help accommodate the addition of oxygen tot he game we created and added oxygen machines to the game at frequent intervals.
+<p>
+Animations were added to the scout and ranged units rotor blades to make them spin while they fly.
+<p>
+More enemies were added into the scene for testing, this caused more of the issues we were experiencing before with small stutters in the game, more adjustments were made to their behaviours to help combat this.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Oct 1 - 7</h2>
+<p>
+New player UI is added to the main scene including credits, oxygen and grenade cooldown displays.
+<p>
+The scout behaviour is seen to be the one causing most of the problems with stuttering  so more attempts to fix this are made, however if no fix is found it will be removed from the finished game.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Oct 8 - 14</h2>
+<p>
+Pause implementation and menu for main scene is added.
+<p>
+Game over scene is added with options to restart and a score panel.
+<p>
+It was found that lag was being caused by how the buildings were put together with mesh colliders so that the pathfinding could not calculate walkable areas properly so the buildings were updated with box colliders.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Oct 15 - 21</h2>
+<p>
+Changes to the grenade thrower so it charges faster.
+<p>
+Ranged enemies have been changed so that they have turrets on them that fire at the player when in range.
+<p>
+Volumetric fog and lighting added to the project.
+<p>
+A tutorial has been added to teach players the controls.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Oct 22 - 28</h2>
+<p>
+Scout enemy has been removed and pathing has been changed so that the enemies patrol between random predetermined positions within their range, this cuts down on the pathfinding time. Stuttering is no longer an issue.
+<p>
+Quality settings have been added to the menus.
+<p>
+Enemy pooling has been added to further optimise the game, so rather than instantiating and destroying the enemies they are set active/inactive.
+<p>
+Loading scene added.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Oct 29 - Nov 4</h2>
+<p>
+Miscellaneous fixes to score collection, enemy spawning, player controller and tutorial.
+<p>
+Added additional air control to the player controller to make the space easier to navigate.
+<p>
+Audio controller and sounds added to menus.
+<p>
+Style of the menus changed to UI space to look more uniform.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Nov 5  - 11</h2>
+<p>
+Logo for the game created.
+<p>
+Sounds and audio control added in main scene.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Nov 12 - 18</h2>
+<p>
+We changed the way the jetpack produces thrust so that it accelerates up instantly rather than trying to add force that way even when the player is falling it still feels effective.
+<p>
+Changes made to how the grenades work so that when they hit something they turn into a proximity mine rather than a timed grenade.
+<p>
+Vending machines and credits have been removed. THey have been replaced with drops for every 5 enemies killed. The drops refill the players oxygen and upgrade an ability when picked up. This was changed because during playtesting it was seen that having to stop at the machines and buy things was difficult and disruptive to the gameplay.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Nov 19 - 25</h2>
+<p>
+Final touch ups and fixes.
+<p>
+Release on Itch.
+<p>
+Documentation and write up.
+</p>
+<hr>
+</div>
+
+</body>
+</html>
