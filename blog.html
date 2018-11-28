@@ -59,15 +59,6 @@ Once the basic A* implementation was complete I added support for weighted nodes
 
 <div>
 <p>
-<h2>Jun 26 - Jul 1</h2>
-<p>
-Once the basic A* implementation was complete I added support for weighted nodes so enemies have prefered pathing areas (such as not pathing too close to walls). I also added performance optimizations such as threading and the use of a heap for node sorting as the pathfinding is going to see use by many enemies it needs to be as efficient as possible.
-</p>
-<hr>
-</div>
-
-<div>
-<p>
 <h2>Jul 2 - 8</h2>
 <p>
 After the pathfinding algorithm we need behaviors for the enemies, we decided on 3 types, a melee enemy that will charge at you, a ranged enemy that shoots from a distance and a scout enemy that broadcasts the players position to the other enemies.
@@ -317,6 +308,25 @@ Final touch ups and fixes.
 Release on Itch.
 <p>
 Documentation and write up.
+</p>
+<hr>
+</div>
+
+<div>
+<p>
+<h2>Reflection</h2>
+<p>
+Initially I thought the project was going to be a very simple arena shooter like devil daggers that would leave plenty of time to add polish to the game. It soon evolved into a much more complex multilevel area with upgrades and explosions.
+<p>
+Initially I was apprehensive about having to create a 3d path finding system as I couldn't find a suitable premade one and it seemed quite complex as well as being something I hadn't done before. After the path finding system was done there were a few issues that caused some concern if it would be usable or not. Thankfully I was able to sort out these issues as I don't know what would have happened if we had no path finding system to use. Making this system turned out to be more beneficial than I initially thought it would be, as the problem solving was enjoyable and I learned some new things about the unity engine as well as some programming.
+<p>
+The player controller was a source of some issues. I had to remake it multiple times to try and make something that felt OK to use. Having completed it I'm still not satisfied with how it turned out but at least it has taught me what things I would do if i had to do something like it in the future.
+<p>
+Texturing the assets was enjoyable for the first few, however after a while having to texture so many assets and get them into game was a bit tedious.
+<p>
+Midway through the project I had some worries about how the game was turning out with all the additions we were putting into it, because of my initial expectations of a simple highly polished game. Once the effects were in, and we had made some adjustments to the game play I felt a little better about it. I still feel like the end product could use more polish as it still looks a quite raw. I would have liked to spend more time on the menus, UI, tutorial, and other parts that while not adding to the game play, they do contribute a lot to a game having a more professional feel. 
+<p>
+By the end of the project I was feeling a bit burnt out with having such a broad spectrum of things to do and issues to fix as i was responsible for most of the "get the game running" parts (asset integration, programming, etc.). I prefer to focus my attention on one thing at a time but with so much to do this wasn't possible, working in a larger group with more defined roles may be a way to help with this.
 </p>
 <hr>
 </div>
