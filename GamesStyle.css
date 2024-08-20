@@ -43,6 +43,15 @@ img
 	border-radius:10%
 }
 
+video
+{
+	width:auto;
+	height:300px;
+	margin-top: 20px;
+    	margin-bottom: 20px;
+	margin-left: 20px;
+    	margin-right: 20px;
+}
 
 h1, h2, h3, h4, h5, h6
 {
